@@ -1,0 +1,360 @@
+<html>
+	<head><titile>ttt</titile></head>
+
+
+<body>
+	<div >
+		<button onclick="grid()" id="qwe">1</button>
+		<button onclick="grid2()" id="qwe2">2</button>
+        <button onclick="grid3()" id="qwe3">3</button>
+	</div>
+	<div>
+		<button onclick="grid4()" id="qwe4">4</button>
+		<button onclick="grid5()" id="qwe5">5</button>
+        <button onclick="grid6()" id="qwe6">6</button>
+	</div>
+	<div>
+		<button onclick="grid7()" id="qwe7">7</button>
+		<button onclick="grid8()" id="qwe8">8</button>
+        <button onclick="grid9()" id="qwe9">9</button>
+	</div>
+	<p id="xwin">0</p>
+	<p id="owin">0</p>
+<script>
+	var i;
+	var xi;
+	var oi;
+	var xc;
+	var oc;
+	var a;
+	var x = [5];
+	var o = [5];
+	i=0;
+	xi=0;
+	oi=0;
+	xc=0;
+	oc=0;
+
+	function reset()
+	{
+		document.getElementById("qwe").innerHTML = "1";
+		document.getElementById("qwe").disabled = false;
+		document.getElementById("qwe2").innerHTML = "2";
+		document.getElementById("qwe2").disabled = false;
+		document.getElementById("qwe3").innerHTML = "3";
+		document.getElementById("qwe3").disabled = false;
+		document.getElementById("qwe4").innerHTML = "4";
+		document.getElementById("qwe4").disabled = false;
+		document.getElementById("qwe5").innerHTML = "5";
+		document.getElementById("qwe5").disabled = false;
+		document.getElementById("qwe6").innerHTML = "6";
+		document.getElementById("qwe6").disabled = false;
+		document.getElementById("qwe7").innerHTML = "7";
+		document.getElementById("qwe7").disabled = false;
+		document.getElementById("qwe8").innerHTML = "8";
+		document.getElementById("qwe8").disabled = false;
+		document.getElementById("qwe9").innerHTML = "9";
+		document.getElementById("qwe9").disabled = false;
+		x=[];
+		o=[];
+		i=0;
+		xi=0;
+		oi=0;
+
+
+	}
+	function win()
+	{
+		xw=(  (x.includes(1) && x.includes(2) && x.includes(3))
+			||(x.includes(4) && x.includes(5) && x.includes(6))
+			||(x.includes(7) && x.includes(8) && x.includes(9))
+			||(x.includes(1) && x.includes(4) && x.includes(7))
+			||(x.includes(2) && x.includes(5) && x.includes(8))
+			||(x.includes(3) && x.includes(6) && x.includes(9))
+			||(x.includes(1) && x.includes(5) && x.includes(9))
+			||(x.includes(3) && x.includes(5) && x.includes(7)));
+		if(xw==true)
+		{
+			window.alert("x win");
+			xc=xc+1;
+			reset();
+			document.getElementById("xwin").innerHTML = xc;
+
+		}
+		ow=(  (o.includes(1) && o.includes(2) && o.includes(3))
+			||(o.includes(4) && o.includes(5) && o.includes(6))
+			||(o.includes(7) && o.includes(8) && o.includes(9))
+			||(o.includes(1) && o.includes(4) && o.includes(7))
+			||(o.includes(2) && o.includes(5) && o.includes(8))
+			||(o.includes(3) && o.includes(6) && o.includes(9))
+			||(o.includes(1) && o.includes(5) && o.includes(9))
+			||(o.includes(3) && o.includes(5) && o.includes(7)));
+		if(ow==true)
+		{
+			window.alert("o win");
+			oc=oc+1;
+			reset();
+			document.getElementById("owin").innerHTML = oc;
+		}
+	}
+	function grid()
+	{
+	
+	
+	if(i%2==0)
+			{
+				document.getElementById("qwe").innerHTML = "x";
+				i=i+1;
+				x[xi]=1;
+				xi=xi+1;
+				
+				//a=(x.includes(1) && x.includes(4));
+				//window.alert(a);
+			}	
+	
+	else
+		{
+			document.getElementById("qwe").innerHTML = "o";
+			i=i+1;
+			o[oi]=1;
+			oi=oi+1;
+			
+		}
+	document.getElementById("qwe").disabled = true;
+	win();
+	if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	
+
+    
+}
+function grid2()
+	{
+	
+	
+	if(i%2==0)
+			{
+				document.getElementById("qwe2").innerHTML = "x";
+				i=i+1;
+				x[xi]=2;
+				xi=xi+1;
+				
+			}	
+	
+	else
+		{
+			document.getElementById("qwe2").innerHTML = "o";
+			i=i+1;
+			o[oi]=2;
+			oi=oi+1;
+			
+		}
+	
+    document.getElementById("qwe2").disabled = true;
+    win();
+    if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	
+}
+function grid3()
+	{
+		
+	if(i%2==0)
+		{
+				document.getElementById("qwe3").innerHTML = "x";
+				i=i+1;
+				x[xi]=3;
+				xi=xi+1;
+				
+		}	
+	
+	else
+		{
+			document.getElementById("qwe3").innerHTML = "o";
+			i=i+1;
+			o[oi]=3;
+			oi=oi+1;
+			
+		}
+	document.getElementById("qwe3").disabled = true;
+	win();	
+	if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	  
+}	
+function grid4()
+	{
+		
+	if(i%2==0)
+		{
+				document.getElementById("qwe4").innerHTML = "x";
+				i=i+1;
+				x[xi]=4;
+				xi=xi+1;
+				
+		}	
+	
+	else
+		{
+			document.getElementById("qwe4").innerHTML = "o";
+			i=i+1;
+			o[oi]=4;
+			oi=oi+1;
+			
+		}
+	document.getElementById("qwe4").disabled = true;
+	win();	
+	if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	  
+}	
+function grid5()
+	{
+		
+	if(i%2==0)
+		{
+				document.getElementById("qwe5").innerHTML = "x";
+				i=i+1;
+				x[xi]=5;
+				xi=xi+1;
+		
+		}	
+	
+	else
+		{
+			document.getElementById("qwe5").innerHTML = "o";
+			i=i+1;
+			o[oi]=5;
+			oi=oi+1;
+			
+		}  
+	document.getElementById("qwe5").disabled = true;
+	win();	
+	if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	
+} function grid6()
+	{
+		
+	if(i%2==0)
+		{
+				document.getElementById("qwe6").innerHTML = "x";
+				i=i+1;
+				x[xi]=6;
+				xi=xi+1;
+				
+		}	
+	
+	else
+		{
+			document.getElementById("qwe6").innerHTML = "o";
+			i=i+1;
+			o[oi]=6;
+			oi=oi+1;
+			
+		}  
+	document.getElementById("qwe6").disabled = true;
+	win();	
+	if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	
+} 
+function grid7()
+	{
+		
+	if(i%2==0)
+		{
+				document.getElementById("qwe7").innerHTML = "x";
+				i=i+1;
+				x[xi]=7;
+				xi=xi+1;
+				
+		}	
+	
+	else
+		{
+			document.getElementById("qwe7").innerHTML = "o";
+			i=i+1;
+			o[oi]=7;
+			oi=oi+1;
+			
+		}  
+		document.getElementById("qwe7").disabled = true;
+		win();
+		if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	
+}function grid8()
+	{
+		
+	if(i%2==0)
+		{
+				document.getElementById("qwe8").innerHTML = "x";
+				i=i+1;
+				x[xi]=8;
+				xi=xi+1;
+			
+		}	
+	
+	else
+		{
+			document.getElementById("qwe8").innerHTML = "o";
+			i=i+1;
+			o[oi]=8;
+			oi=oi+1;
+			
+		}  
+	document.getElementById("qwe8").disabled = true;
+	win();	
+	if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	
+}
+function grid9()
+	{
+		
+	if(i%2==0)
+		{
+				document.getElementById("qwe9").innerHTML = "x";
+				i=i+1;
+				x[xi]=9;
+				xi=xi+1;
+				
+		}	
+	
+	else
+		{
+			document.getElementById("qwe9").innerHTML = "o";
+			i=i+1;
+			o[oi]=9;
+			oi=oi+1;
+			
+		}  
+	document.getElementById("qwe9").disabled = true;
+	win();	
+	if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	
+}
+</script>
+</body>	
+
+</html>
