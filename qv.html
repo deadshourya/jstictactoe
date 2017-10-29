@@ -1,0 +1,137 @@
+<html>
+	<head><titile>ttt</titile></head>
+
+
+<body>
+	<div >
+		<button onclick="grid(1,'qwe')" id="qwe">1</button>
+		<button onclick="grid(2,'qwe2')" id="qwe2">2</button>
+        <button onclick="grid(3,'qwe3')" id="qwe3">3</button>
+	</div>
+	<div>
+		<button onclick="grid(4,'qwe4')" id="qwe4">4</button>
+		<button onclick="grid(5,'qwe5')" id="qwe5">5</button>
+        <button onclick="grid(6,'qwe6')" id="qwe6">6</button>
+	</div>
+	<div>
+		<button onclick="grid(7,'qwe7')" id="qwe7">7</button>
+		<button onclick="grid(8,'qwe8')" id="qwe8">8</button>
+        <button onclick="grid(9,'qwe9')" id="qwe9">9</button>
+	</div>
+	X = <id="xwin">0</>
+	   O = <id="owin">0</>
+<script>
+	var i;
+	var xi;
+	var oi;
+	var xc;
+	var oc;
+	var a;
+	var x = [5];
+	var o = [5];
+	i=0;
+	xi=0;
+	oi=0;
+	xc=0;
+	oc=0;
+
+	function reset()
+	{
+		document.getElementById("qwe").innerHTML = "1";
+		document.getElementById("qwe").disabled = false;
+		document.getElementById("qwe2").innerHTML = "2";
+		document.getElementById("qwe2").disabled = false;
+		document.getElementById("qwe3").innerHTML = "3";
+		document.getElementById("qwe3").disabled = false;
+		document.getElementById("qwe4").innerHTML = "4";
+		document.getElementById("qwe4").disabled = false;
+		document.getElementById("qwe5").innerHTML = "5";
+		document.getElementById("qwe5").disabled = false;
+		document.getElementById("qwe6").innerHTML = "6";
+		document.getElementById("qwe6").disabled = false;
+		document.getElementById("qwe7").innerHTML = "7";
+		document.getElementById("qwe7").disabled = false;
+		document.getElementById("qwe8").innerHTML = "8";
+		document.getElementById("qwe8").disabled = false;
+		document.getElementById("qwe9").innerHTML = "9";
+		document.getElementById("qwe9").disabled = false;
+		x=[];
+		o=[];
+		i=0;
+		xi=0;
+		oi=0;
+
+
+	}
+	function win()
+	{
+		xw=(  (x.includes(1) && x.includes(2) && x.includes(3))
+			||(x.includes(4) && x.includes(5) && x.includes(6))
+			||(x.includes(7) && x.includes(8) && x.includes(9))
+			||(x.includes(1) && x.includes(4) && x.includes(7))
+			||(x.includes(2) && x.includes(5) && x.includes(8))
+			||(x.includes(3) && x.includes(6) && x.includes(9))
+			||(x.includes(1) && x.includes(5) && x.includes(9))
+			||(x.includes(3) && x.includes(5) && x.includes(7)));
+		if(xw==true)
+		{
+			window.alert("x wins");
+			xc=xc+1;
+			reset();
+			document.getElementById("xwin").innerHTML = xc;
+
+		}
+		ow=(  (o.includes(1) && o.includes(2) && o.includes(3))
+			||(o.includes(4) && o.includes(5) && o.includes(6))
+			||(o.includes(7) && o.includes(8) && o.includes(9))
+			||(o.includes(1) && o.includes(4) && o.includes(7))
+			||(o.includes(2) && o.includes(5) && o.includes(8))
+			||(o.includes(3) && o.includes(6) && o.includes(9))
+			||(o.includes(1) && o.includes(5) && o.includes(9))
+			||(o.includes(3) && o.includes(5) && o.includes(7)));
+		if(ow==true)
+		{
+			window.alert("o wins");
+			oc=oc+1;
+			reset();
+			document.getElementById("owin").innerHTML = oc;
+		}
+	}
+	function grid(n,id)
+	{
+	
+	//window.alert(id);
+	if(i%2==0)
+			{
+				document.getElementById(id).innerHTML = "x";
+				i=i+1;
+				x[xi]=n;
+				xi=xi+1;
+				
+				//a=(x.includes(1) && x.includes(4));
+				//window.alert(a);
+			}	
+	
+	else
+		{
+			document.getElementById(id).innerHTML = "o";
+			i=i+1;
+			o[oi]=n;
+			oi=oi+1;
+			
+		}
+	document.getElementById(id).disabled = true;
+	win();
+	if(i>8)
+		{
+			window.alert("tie");
+			reset();
+		}	
+
+    
+}
+
+</script>
+</body>	
+
+</html>
